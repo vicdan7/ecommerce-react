@@ -6,7 +6,8 @@ import { useDispatch } from "react-redux";
 const useCrudCart = () => {
   const dispatch = useDispatch();
   const addProductToCart = (data) => {
-    const url = `${import.meta.env.VITE_API_URL}cart`;
+    const URL_BASE = import.meta.env.VITE_REACT_APP_URL 
+    const url = `${URL_BASE}cart`;
     axios
       .post(url, data, getConfigToken())
       .then(() => {
@@ -20,7 +21,8 @@ const useCrudCart = () => {
   };
 
   const deleteProductFromCart = (id) => {
-    const url = `${import.meta.env.VITE_API_URL}cart/${id}`;
+    const URL_BASE = import.meta.env.VITE_REACT_APP_URL //
+    const url = `${URL_BASE}cart/${id}`;  //
     axios
       .delete(url, getConfigToken())
       .then(() => {
@@ -30,7 +32,8 @@ const useCrudCart = () => {
   };
 
   const updateProductInCart = (id, data) => {
-    const url = `${import.meta.env.VITE_API_URL}cart/${id}`;
+    const URL_BASE = import.meta.env.VITE_REACT_APP_URL //
+    const url = `${URL_BASE}cart/${id}`;  //
     axios
       .put(url, data, getConfigToken())
       .then(() => {

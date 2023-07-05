@@ -12,8 +12,8 @@ const ProductInCart = ({ prodCart }) => {
     <article className="prodcart">
       <img
         className="prodcart__img"
-        src={prodCart.product.images[0].url}
-        alt=""
+        src={prodCart?.product?.productImgs[0].url}
+        alt={prodCart?.product.title}
       />
       <h3 className="prodcart__title">{prodCart.product.title}</h3>
       <footer className="prodcart__footer">

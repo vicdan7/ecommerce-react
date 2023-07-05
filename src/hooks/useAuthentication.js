@@ -2,14 +2,16 @@ import axios from "axios";
 
 const useAuthentication = () => {
   const createNewUser = (data) => {
-    const url = `${import.meta.env.VITE_API_URL}users`;
+    const URL_BASE = import.meta.env.VITE_REACT_APP_URL  //
+    const url = `${URL_BASE}users`;  //
     axios
       .post(url, data)
       .then((res) => res)
       .catch((err) => console.error(err));
   };
   const loginUser = (data) => {
-    const url = `${import.meta.env.VITE_API_URL}users/login`;
+    const URL_BASE = import.meta.env.VITE_REACT_APP_URL  //
+    const url = `${URL_BASE}users/login`;  //
     return axios.post(url, data);
   };
 

@@ -9,8 +9,8 @@ import "./styles/homeProducts.css"
 const ProductId = () => {
   
   const { id } = useParams();
-
-  const url = `${import.meta.env.VITE_API_URL}products/${id}`;
+  const URL_BASE = import.meta.env.VITE_REACT_APP_URL  //
+  const url = `${URL_BASE}products/${id}`;  //
   const [product, getProductById] = useFetch(url);
 
   useEffect(() => {

@@ -4,7 +4,8 @@ import CartProduct from "../Home/CartProduct";
 import "./style/similarproducts.css";
 
 const SimilarProduct = ({ product }) => {
-  const url = `${import.meta.env.VITE_API_URL}products?categoryId=${product?.categoryId}`;
+  const URL_BASE = import.meta.env.VITE_REACT_APP_URL  //
+  const url = `${URL_BASE}products?categoryId=${product?.categoryId}`;  //
 
   const [filterProducts, getProductByCategory] = useFetch(url);
 

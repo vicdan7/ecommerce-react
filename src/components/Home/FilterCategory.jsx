@@ -4,10 +4,13 @@ import { getAllProductsThunk } from "../../store/slices/products.slice";
 import { useDispatch } from "react-redux";
 import "./styles/filterCategory.css";
 
+
 const FilterCategory = ({ setFromTo }) => {
+
+  const URL_BASE = import.meta.env.VITE_REACT_APP_URL //
   const dispatch = useDispatch();
 
-  const url = `${import.meta.env.VITE_API_URL}categories`;
+  const url = `${URL_BASE}/categories`; //
   const initFromTo = {
     from: "",
     to: "",
@@ -24,7 +27,7 @@ const FilterCategory = ({ setFromTo }) => {
   };
 
   const handleClickCategories = (id) => {
-    const url = `${import.meta.env.VITE_API_URL}products?categoryId=${id}`;
+    const url = `${URL_BASE}/products?categoryId=${id}`; //
     resetFilterPrice();
     dispatch(getAllProductsThunk(url));
   };

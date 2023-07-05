@@ -5,9 +5,10 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 
 const usePurchases = () => {
+  const URL_BASE = import.meta.env.VITE_REACT_APP_URL //
   const [purchases, setPurchases] = useState();
   const dispatch = useDispatch();
-  const url = `${import.meta.env.VITE_API_URL}purchases`;
+  const url = `${URL_BASE}purchases`;  //
 
   const buyThisCart = () => {
     axios
